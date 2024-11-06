@@ -40,5 +40,27 @@
   --hoverbtn_E07575:#E07575;
   --hoverbtn_A0BCE0:#A0BCE0;
   --poppins:"Poppins", sans-serif;
-  --Inter:"Inter", sans-serif;
+  --Inter: "inter",sans-serif;
+}
+
+@layer components{
+  .menuunderline{
+    position: relative;
+
+  }
+  .menuunderline::after{
+    position: absolute;
+    content: "";
+    left:0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--black738);
+    transform:scale(0);
+    transition: all linear .3s;
+    
+  }
+  .menuunderline:hover::after{
+    transform:scale(1);
+  }
 }
