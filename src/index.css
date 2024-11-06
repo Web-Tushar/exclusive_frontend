@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  *{
+    margin : 0 ;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+  }
+  a{
+    text-decoration: none;
+    display: inline-block;
+  }
+  img{
+    vertical-align: middle;
+
+  }
+  ul,li,ol{
+    list-style-type: none;
+  }
+}
+:root{
+  --white_color:#FFFFFF;
+  --black738:#363738;
+  --white_5F5:#F5F5F5;
+  --white_FEFAF1:#FEFAF1;
+  --white_FFFFFF:#FFFFFF;
+  --text_white:#FAFAFA;
+  --text_7D8184:#7D8184;
+  --text_000000:#000000;
+  --button_000000:#000000;
+  --red_DB4444:#DB4444;
+  --button_00FF66:#00FF66;
+  --hoverbtn_E07575:#E07575;
+  --hoverbtn_A0BCE0:#A0BCE0;
+  --poppins:"Poppins", sans-serif;
+  --Inter:"Inter", sans-serif;
+}
