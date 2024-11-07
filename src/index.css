@@ -63,4 +63,22 @@
   .menuunderline:hover::after{
     transform:scale(1);
   }
+  .amount{
+    position: relative;
+  }
+  .amount::after{
+    position: absolute;
+    content: "2";
+    top: -8px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:#DB4444;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    color: var(--text_white);
+    border: 1px solid var(--black738);
+  }
 }
