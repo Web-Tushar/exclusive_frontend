@@ -2,71 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  *{
-    margin : 0 ;
+  * {
+    margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
 
   }
-  a{
+
+  a {
     text-decoration: none;
     display: inline-block;
   }
-  img{
+
+  img {
     vertical-align: middle;
 
   }
-  ul,li,ol{
+
+  ul,
+  li,
+  ol {
     list-style-type: none;
   }
 }
-:root{
-  --white_color:#FFFFFF;
-  --black738:#363738;
-  --white_5F5:#F5F5F5;
-  --white_FEFAF1:#FEFAF1;
-  --white_FFFFFF:#FFFFFF;
-  --text_white:#FAFAFA;
-  --text_7D8184:#7D8184;
-  --text_000000:#000000;
-  --button_000000:#000000;
-  --red_DB4444:#DB4444;
-  --button_00FF66:#00FF66;
-  --hoverbtn_E07575:#E07575;
-  --hoverbtn_A0BCE0:#A0BCE0;
-  --poppins:"Poppins", sans-serif;
-  --Inter: "inter",sans-serif;
+
+:root {
+  --white_color: #FFFFFF;
+  --black738: #363738;
+  --white_5F5: #F5F5F5;
+  --white_FEFAF1: #FEFAF1;
+  --white_FFFFFF: #FFFFFF;
+  --text_white: #FAFAFA;
+  --text_7D8184: #7D8184;
+  --text_000000: #000000;
+  --button_000000: #000000;
+  --red_DB4444: #DB4444;
+  --button_00FF66: #00FF66;
+  --hoverbtn_E07575: #E07575;
+  --hoverbtn_A0BCE0: #A0BCE0;
+  --poppins: "Poppins", sans-serif;
+  --Inter: "inter", sans-serif;
 }
 
-@layer components{
-  .menuunderline{
+@layer components {
+  .menuunderline {
     position: relative;
 
   }
-  .menuunderline::after{
+
+  .menuunderline::after {
     position: absolute;
     content: "";
-    left:0;
+    left: 0;
     bottom: 0;
     height: 2px;
     width: 100%;
     background-color: var(--black738);
-    transform:scale(0);
+    transform: scale(0);
     transition: all linear .3s;
-    
+
   }
-  .menuunderline:hover::after{
-    transform:scale(1);
+
+  .menuunderline:hover::after {
+    transform: scale(1);
   }
-  .amount{
+
+  .amount {
     position: relative;
   }
-  .amount::after{
+
+  .amount::after {
     position: absolute;
     content: "2";
     top: -8px;
@@ -74,7 +84,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color:#DB4444;
+    background-color: #DB4444;
     text-align: center;
     line-height: 18px;
     font-size: 14px;

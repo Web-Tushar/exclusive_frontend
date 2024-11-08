@@ -31,8 +31,8 @@ const Navbar = () => {
                item: "Sign Up"
           }
      ]
-     const [ account, setaccount] = useState(false)
-     const handleClick =  ()=>{
+     const [account, setaccount] = useState(false)
+     const handleClick = () => {
           setaccount(!account)
      }
      return (
@@ -78,41 +78,41 @@ const Navbar = () => {
 
 
                                    <span className='text-text_000000  rounded-full bg-red_DB4444 text-xl p-2 cursor-pointer relative' onClick={handleClick}><FaRegUser /></span>
-                                   { account && (
+                                   {account && (
                                         <div className='absolute right-[8px] top-[42px]  bg-slate-400 p-4'>
-                                        <div className='flex  gap-2 items-center mb-2'>
-                                             <span><FiUser />
-                                             </span>
-                                             <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>Manage my account</h2>
+                                             <div className='flex  gap-2 items-center mb-2'>
+                                                  <span><FiUser />
+                                                  </span>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>Manage my account</h2>
+                                             </div>
+                                             <div className='flex gap-2 items-center mb-2'>
+                                                  <span>
+                                                       <IoBagHandleOutline />
+                                                  </span>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My order</h2>
+                                             </div>
+                                             <div className='flex gap-2 items-center mb-2'>
+                                                  <span>
+                                                       <ImCancelCircle />
+                                                  </span>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My cancellations</h2>
+                                             </div>
+                                             <div className='flex gap-2 items-center mb-2'>
+                                                  <span>
+                                                       <FaRegStar />
+                                                  </span>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My reviews</h2>
+                                             </div>
+                                             <div className='flex gap-2 items-center mb-2'>
+                                                  <span>
+                                                       <IoMdLogOut />
+                                                  </span>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>Log out</h2>
+                                             </div>
                                         </div>
-                                        <div className='flex gap-2 items-center mb-2'>
-                                             <span>
-                                                <IoBagHandleOutline />
-                                             </span>
-                                             <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My order</h2>
-                                        </div>
-                                        <div className='flex gap-2 items-center mb-2'>
-                                             <span>
-                                                   <ImCancelCircle />
-                                             </span>
-                                             <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My cancellations</h2>
-                                        </div>
-                                        <div className='flex gap-2 items-center mb-2'>
-                                             <span>
-                                                  <FaRegStar />
-                                             </span>
-                                             <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My reviews</h2>
-                                        </div>
-                                        <div  className='flex gap-2 items-center mb-2'>
-                                             <span>
-                                             <IoMdLogOut />
-                                             </span>
-                                             <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>Log out</h2>
-                                        </div>
-                                   </div>
                                    )}
 
-                                   
+
 
 
 

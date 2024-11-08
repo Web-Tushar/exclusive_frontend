@@ -11,7 +11,7 @@ import Homepage from './pages/home/Homepage';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path='/' element={<Homepage/>} />
+      <Route path='/' element={<Homepage />} />
     </Route>
   )
 )
@@ -19,7 +19,7 @@ const router = createBrowserRouter(
 
 const App = () => {
   return <RouterProvider router={router} />
-  
+
 }
 
 export default App
