@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useRef, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import { RiSearchLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
@@ -32,9 +32,24 @@ const Navbar = () => {
           }
      ]
      const [account, setaccount] = useState(false)
-     const handleClick = () => {
-          setaccount(!account)
-     }
+     const userAccountRef = useRef(null) 
+     // const handleClick = () => {
+     //      setaccount(!account)
+     //      // console.log(userAccountRef.current);
+     // }
+
+     useEffect(()=>{
+          window.addEventListener("click",(event)=>{
+               if( userAccountRef.current.contains(event.target)){
+                    setaccount(!account);
+               }else{
+
+                    setaccount(false)
+               }
+
+               // console.log(event.target);
+          })
+     },[account])
      return (
           <div className='pt-10 pb-4 border-b-[2px] border-b-text_000000'>
                <div className='container '>
@@ -77,13 +92,16 @@ const Navbar = () => {
                                    <span className='text-text_000000 text-2xl amount cursor-pointer'><GrCart /></span>
 
 
-                                   <span className='text-text_000000  rounded-full bg-red_DB4444 text-xl p-2 cursor-pointer relative' onClick={handleClick}><FaRegUser /></span>
+                                   <span className='text-text_000000  rounded-full bg-red_DB4444 text-xl p-2 cursor-pointer relative' 
+                                   // onClick={handleClick}
+                                   ref={userAccountRef}
+                                   ><FaRegUser /></span>
                                    {account && (
                                         <div className='absolute right-[8px] top-[42px]  bg-slate-400 p-4'>
-                                             <div className='flex  gap-2 items-center mb-2'>
+                                             <div className='flex  gap-2 items-center mb-2 cursor-pointer duration-300 hover:bg-orange-600 p-1'>
                                                   <span><FiUser />
                                                   </span>
-                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>Manage my account</h2>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins '>Manage my account</h2>
                                              </div>
                                              <div className='flex gap-2 items-center mb-2'>
                                                   <span>
