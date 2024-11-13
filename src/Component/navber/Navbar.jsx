@@ -32,24 +32,24 @@ const Navbar = () => {
           }
      ]
      const [account, setaccount] = useState(false)
-     const userAccountRef = useRef(null) 
-     // const handleClick = () => {
-     //      setaccount(!account)
-     //      // console.log(userAccountRef.current);
-     // }
+     // const userAccountRef = useRef(null) 
+     const handleClick = () => {
+          setaccount(!account)
+          // console.log(userAccountRef.current);
+     }
 
-     useEffect(()=>{
-          window.addEventListener("click",(event)=>{
-               if( userAccountRef.current.contains(event.target)){
-                    setaccount(!account);
-               }else{
+     // useEffect(()=>{
+     //      window.addEventListener("click",(event)=>{
+     //           if( userAccountRef.current.contains(event.target)){
+     //                setaccount(!account);
+     //           }else{
 
-                    setaccount(false)
-               }
+     //                setaccount(false)
+     //           }
 
-               // console.log(event.target);
-          })
-     },[account])
+     //           // console.log(event.target);
+     //      })
+     // },[userAccountRef])
      return (
           <div className='pt-10 pb-4 border-b-[2px] border-b-text_000000'>
                <div className='container '>
@@ -93,8 +93,8 @@ const Navbar = () => {
 
 
                                    <span className='text-text_000000  rounded-full bg-red_DB4444 text-xl p-2 cursor-pointer relative' 
-                                   // onClick={handleClick}
-                                   ref={userAccountRef}
+                                   onClick={handleClick}
+                                   // ref={userAccountRef}
                                    ><FaRegUser /></span>
                                    {account && (
                                         <div className='absolute right-[8px] top-[42px]  bg-slate-400 p-4'>
@@ -103,29 +103,29 @@ const Navbar = () => {
                                                   </span>
                                                   <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins '>Manage my account</h2>
                                              </div>
-                                             <div className='flex gap-2 items-center mb-2'>
+                                             <div className='flex gap-2 items-center mb-2 cursor-pointer duration-300 hover:bg-orange-600 p-1'>
                                                   <span>
                                                        <IoBagHandleOutline />
                                                   </span>
-                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My order</h2>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins '>My order</h2>
                                              </div>
-                                             <div className='flex gap-2 items-center mb-2'>
+                                             <div className='flex gap-2 items-center mb-2 cursor-pointer duration-300 hover:bg-orange-600 p-1'>
                                                   <span>
                                                        <ImCancelCircle />
                                                   </span>
-                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My cancellations</h2>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins '>My cancellations</h2>
                                              </div>
-                                             <div className='flex gap-2 items-center mb-2'>
+                                             <div className='flex gap-2 items-center mb-2 cursor-pointer duration-300 hover:bg-orange-600 p-1'>
                                                   <span>
                                                        <FaRegStar />
                                                   </span>
-                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>My reviews</h2>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins '>My reviews</h2>
                                              </div>
-                                             <div className='flex gap-2 items-center mb-2'>
+                                             <div className='flex gap-2 items-center mb-2 cursor-pointer duration-300 hover:bg-orange-600 p-1'>
                                                   <span>
                                                        <IoMdLogOut />
                                                   </span>
-                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins cursor-pointer duration-300 hover:bg-orange-600'>Log out</h2>
+                                                  <h2 className='text-white_FEFAF1 text-xl font-normal font-poppins '>Log out</h2>
                                              </div>
                                         </div>
                                    )}
