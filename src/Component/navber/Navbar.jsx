@@ -1,4 +1,4 @@
-import React, { useState,useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import { RiSearchLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
@@ -92,12 +92,12 @@ const Navbar = () => {
                                    <span className='text-text_000000 text-2xl amount cursor-pointer'><GrCart /></span>
 
 
-                                   <span className='text-text_000000  rounded-full bg-red_DB4444 text-xl p-2 cursor-pointer relative' 
-                                   onClick={handleClick}
+                                   <span className='text-text_000000  rounded-full bg-red_DB4444 text-xl p-2 cursor-pointer relative'
+                                        onClick={handleClick}
                                    // ref={userAccountRef}
                                    ><FaRegUser /></span>
                                    {account && (
-                                        <div className='absolute right-[8px] top-[42px]  bg-slate-400 p-4'>
+                                        <div className='absolute right-[8px] top-[42px] z-30  bg-[rgba(0,0,0,0.66)] p-4'>
                                              <div className='flex  gap-2 items-center mb-2 cursor-pointer duration-300 hover:bg-orange-600 p-1'>
                                                   <span><FiUser />
                                                   </span>

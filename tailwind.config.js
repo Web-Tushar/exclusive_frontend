@@ -20,12 +20,12 @@ export default {
         hoverbtn_E07575: 'var(--hoverbtn_E07575)',
         hoverbtn_A0BCE0: 'var(--hoverbtn_A0BCE0)',
         red_DB4444: 'var(--red_DB4444)',
-        
+
       },
     },
     fontFamily: {
-    "poppins": "var(--poppins)",
-    "Inter": "var(--Inter)",
+      "poppins": "var(--poppins)",
+      "Inter": "var(--Inter)",
     },
     container: {
       center: true,
@@ -37,7 +37,7 @@ export default {
         // // '2xl': '1rem',
       },
     },
-    
+
   },
   plugins: [],
 }
