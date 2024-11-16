@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 const Timer = ({ timeofOffer }) => {
-     const [time, setTime] = useState(timeofOffer * 24 * 60 * 60 * 1000 || 0)
+     const [time, setTime] = useState(timeofOffer * 24 * 60 * 60 * 1000 ||0);
 
      useEffect(() => {
-          // const worker = new Worker(
-          //      new URL("../../CountDownWorker.js", import.meta.url)
-          //    );
           const worker = new Worker(new URL('../../CountDownWorker.js', import.meta.url))
-          worker.postMessage(time)
+          worker.postMessage(time);
           worker.onmessage = (e) => {
                setTime(e.data);
           };
@@ -19,8 +16,8 @@ const Timer = ({ timeofOffer }) => {
      //           setTime(time - 1000)
      //      }, 1000);
      // }, [time])
-     const formateDate = (millisecond) => {
-          let total_second = parseInt(Math.floor(millisecond / 1000));
+     const formateDate = (milisecond) => {
+          let total_second = parseInt(Math.floor(milisecond / 1000));
           let total_minutes = parseInt(Math.floor(total_second / 60));
           let total_hours = parseInt(Math.floor(total_minutes / 60));
           let Days = parseInt(Math.floor(total_hours / 24));
@@ -38,7 +35,7 @@ const Timer = ({ timeofOffer }) => {
                     <div>
                          <span className='font-poppins text-[12px] font-medium text-text_000000'>Days</span>
                          <h2 className='text-text_000000 font-Inter text-[32px] font-bold	'>
-                              {Days < 10 && `0 ${Days}`}
+                              {Days < 10 && `0${Days}`}
 
                          </h2>
                     </div>

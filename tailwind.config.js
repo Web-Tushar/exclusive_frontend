@@ -17,6 +17,7 @@ export default {
         text_000000: 'var(--text_000000)',
         button_000000: 'var(--button_000000)',
         button_00FF66: 'var(--button_00FF66)',
+        star: 'var(--star_color)',
         hoverbtn_E07575: 'var(--hoverbtn_E07575)',
         hoverbtn_A0BCE0: 'var(--hoverbtn_A0BCE0)',
         red_DB4444: 'var(--red_DB4444)',

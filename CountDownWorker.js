@@ -5,12 +5,12 @@ self.onmessage = (event) => {
                clearInterval(stop)
                self.postMessage(time);
           } else {
-               time = time - 1000
-               self.postMessage(time)
-          }
+               time = time - 1000;
+               self.postMessage(time);
+          };
 
      }, 1000);
-}
+};
 
 // self.onmessage = (event) => {
 //      let time = event.data;
