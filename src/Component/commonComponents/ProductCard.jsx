@@ -5,12 +5,13 @@ import { FiEye } from "react-icons/fi";
 import { GoStarFill } from "react-icons/go";
 
 const ProductCard = () => {
+
      return (
           <div>
                <div>
-                    <div className="w-[270px] h-[250px] bg-white_5F5  pt-3 pb-[49px]">
+                    <div className="w-[270px] rounded-[2px] h-[250px] bg-white_5F5 mt-[31px] pt-3 pb-[49px] group  cursor-pointer">
                          <div className='flex justify-between px-3   '>
-                              <span className='bg-red_DB4444 py-[4px] text-text_white font-poppins text-[12px] px-[12px] font-normal rounded-[4px] block'>-40%</span>
+                              <span className='bg-red_DB4444 py-[4px] text-text_white font-poppins text-[12px] px-[12px] font-normal rounded-[4px] block'>- 40%</span>
 
                               <span className=' text-[20px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'><FaRegHeart /></span>
                          </div>
@@ -23,21 +24,21 @@ const ProductCard = () => {
                               <span className=' absolute text-[20px] top-[0px] right-[-36px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'><FiEye /></span>
 
                          </div>
-                    </div>
-                    <div className='w-[270px] mt-[16px]'>
-                         <h2 className='text-text_000000 font-poppins text-[16px] font-medium	'>HAVIT HV-G92</h2>
-                         <div className='flex gap-x-3 mt-2'>
-                              <span className='text-red_DB4444 font-poppins text-[16px] font-medium	'>$120</span>
-                              <span className='text-text_000000 opacity-[0.5] font-poppins text-[16px] font-medium	'>$160</span>
+                         <div className="overlay opacity-0 cursor-pointer h-[41px] font-poppins font-medium text-[16px] w-full bg-button_000000 items-center capitalize  text-white flex justify-center duration-500   group-hover:opacity-100">
+                              <h3>add to cart</h3>
                          </div>
-                         <div className='flex items-center gap-x-2 mt-2'>
-                              <div className='flex '>
-                                   <span className='text-star'><GoStarFill /></span>
-                                   <span className='text-star'><GoStarFill /></span>
-                                   <span className='text-star'><GoStarFill /></span>
-                                   <span className='text-star'><GoStarFill /></span>
-                                   <span className='text-star'><GoStarFill /></span>
-
+                    </div>
+                    <div className='w-full mt-[16px]'>
+                         <h2 className='text-text_000000 font-poppins text-[16px] cursor-pointer font-medium	'>HAVIT HV-G92</h2>
+                         <div className='flex gap-x-3 mt-2'>
+                              <span className='text-red_DB4444 font-poppins text-[16px] font-medium cursor-pointer	'>$120</span>
+                              <span className='text-text_000000 opacity-[0.5] font-poppins text-[16px] font-medium cursor-pointer	 line-through'>$160</span>
+                         </div>
+                         <div className='flex items-center gap-x-2 mt-2 cursor-pointer'>
+                              <div className='flex gap-x-1'>
+                                   {[...new Array(5)].map((_, index) => (
+                                        <GoStarFill className='text-star' />
+                                   ))}
                               </div>
                               <div>
                                    <span>(88)</span>

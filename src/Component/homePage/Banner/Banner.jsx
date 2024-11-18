@@ -14,19 +14,20 @@ function Banner() {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
+          autoplay: true,
           appendDots: (dots) => (
                <div
                     style={{
                          position: 'absolute',
                          bottom: "1%",
-                         left: "32%",
+                         left: "0%",
                          transform: "translateY(-50%)",
                          // backgroundColor: "#ddd",
                          borderRadius: "10px",
                          padding: "10px"
                     }}
                >
-                    <ul style={{ margin: "0px", display: "flex", gap: "4px", alignItems: "center" }}> {dots} </ul>
+                    <ul style={{ margin: "0px",display:"flex" ,alignItems:"center" ,justifyContent:"center"}}> {dots} </ul>
                </div>
           ),
           customPaging: i => (
@@ -95,9 +96,9 @@ function Banner() {
                     <div className=' w-[77%]  pl-11 pt-[45px]'>
                          <div className="slider-container">
                               <Slider {...settings}>
-                                   {[...new Array(5)].map((_, index) => (
-                                        <div key={index}>
-                                             <img src={BannerImg} alt="BannerImg" className='w-full h-full object-cover' />
+                                   {[...new Array(10)].map((_, index) => (
+                                        <div key={index} className='w-[892px] h-[344px] '>
+                                             <img src={BannerImg} alt="BannerImg" className='w-full h-full object-content' />
                                         </div>
 
                                    ))

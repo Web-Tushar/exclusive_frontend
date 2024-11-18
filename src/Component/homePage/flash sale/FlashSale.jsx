@@ -1,22 +1,24 @@
 import React from 'react'
-import Heading from '../../commonComponents/Heading'
-import Timer from '../../commonComponents/Timer'
-import ProductCard from '../../commonComponents/ProductCard'
+import { ImImage } from 'react-icons/im'
+import ProductComponentLayout from "../../commonComponents/productComponentLayout"
+import ProductCard from './../../commonComponents/ProductCard';
 
 const FlashSale = () => {
   return (
-    <div className='container mt-[140px] mb-[60px]'>
-      <div className='  gap-x-[87px] flex items-end'>
-        <div >
-          <Heading title={"Today’s"} description={"Flash Sales"} />
-        </div>
-        <div><Timer /></div>
-      </div>
+    <div className='container'>
       <div>
-        <ProductCard />
+        <ProductComponentLayout 
+        ProductCard = {ProductCard}   
+        TimeStamp = {true}
+        TimeofOffer = {1}
+        isArrowsTrue ={true}
+        heading = "Today's"   
+        description ="  Flash sales"  
+        />
+
+
       </div>
     </div>
-
   )
 }
 

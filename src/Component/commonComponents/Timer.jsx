@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-const Timer = ({ timeofOffer }) => {
-     const [time, setTime] = useState(timeofOffer * 24 * 60 * 60 * 1000 ||0);
+const Timer = ({ TimeofOffer }) => {
+     const [time, setTime] = useState(TimeofOffer * 24 * 60 * 60 * 1000 ||0);
 
      useEffect(() => {
           const worker = new Worker(new URL('../../CountDownWorker.js', import.meta.url))
