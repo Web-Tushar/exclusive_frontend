@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Heading = ({ title, description }) => {
   return (
     <div>

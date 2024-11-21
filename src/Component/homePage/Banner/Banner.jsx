@@ -70,7 +70,6 @@ function Banner() {
                setCurrentSlide(currentSlide)
           }
      };
-     console.log(currentSlide);
 
 
      return (
