@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { FaRegHeart } from "react-icons/fa";
-import image from '../../assets/images/remoot.png'
+import image from '../../assets/images/remoot.png';
 import { FiEye } from "react-icons/fi";
 import { GoStarFill } from "react-icons/go";
 
@@ -8,7 +8,7 @@ const ProductCard = () => {
 
      return (
           <div>
-               <div>
+               <div className='w-[270px] '>
                     <div className="w-[270px] rounded-[2px] h-[250px] bg-white_5F5 mt-[31px] pt-3 pb-[49px] group  cursor-pointer">
                          <div className='flex justify-between px-3   '>
                               <span className='bg-red_DB4444 py-[4px] text-text_white font-poppins text-[12px] px-[12px] font-normal rounded-[4px] block'>- 40%</span>

@@ -3,29 +3,31 @@ import React, { useRef } from "react";
 import Heading from '../../Component/commonComponents/Heading';
 import Timer from '../../Component/commonComponents/Timer';
 import Slider from "react-slick";
-import Skeletone from '../../helpers/Skeletone';
 import { IoMdArrowBack } from "react-icons/io";
 import { IoArrowForward } from "react-icons/io5";
+// import Skeletone from '../../helpers/Skeletone';
 
 const ProductComponentLayout = ({
-  ProductCard = () => <Skeletone />,
+  ProductCard = () => {
+
+  },
   TimeStamp = false,
   isArrowsTrue = false,
   TimeofOffer = 0,
   heading = "Today's",
-  description = "  Flash sales",
-  partialItemShow = 4
+  description = "Flash sales",
+
+  // partialItemShow= 4
+
 }) => {
   const sliderRef = useRef(null);
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: partialItemShow,
-    slidesToScroll: partialItemShow - 1,
-    // autoplay: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />
+    slidesToShow: 4,
+    slidesToScroll: 3,
+
 
   };
   const next = () => {
@@ -34,27 +36,6 @@ const ProductComponentLayout = ({
   const prev = () => {
     sliderRef.current.slickPrev()
   }
-
-  // function SampleNextArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{ ...style, display: "block", background: "red" }}
-  //       onClick={onClick}
-  //     />
-  //   );
-  // }
-  // function SamplePrevArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{ ...style, display: "block", background: "green" }}
-  //       onClick={onClick}
-  //     />
-  //   );
-  // }
 
   return (
 
@@ -86,31 +67,19 @@ const ProductComponentLayout = ({
           </h1>
         </div>
       )}
-      {viewButton && (
+      {/* {viewButton && (
         <div className="bg-redDB4444  text-md font-popins font-medium text-white_FFFFFF px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
           View All
         </div>
-      )}
+      )} */}
       <div >
-        <div className="slider-container">
+      <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>
-            {isLoading
-              ? [...new Array(6)]?.map((_, index) => (
-                <div
-                  className={partialItemShow > 4 ? "pr-8" : "pr-6"}
-                  key={index}
-                >
-                  <ProductSkeleton />
-                </div>
-              ))
-              : componentData?.map((item, index) => (
-                <div
-                  className={partialItemShow > 4 ? "pr-8" : "pr-6"}
-                  key={item.key}
-                >
-                  <ProductCard itemData={item ? item : {}} />
-                </div>
-              ))}
+            {[... new Array(6)].map((_, index) => (
+              <div >
+                <ProductCard />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>
