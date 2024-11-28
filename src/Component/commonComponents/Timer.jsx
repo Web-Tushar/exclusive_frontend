@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
 const Timer = ({ TimeofOffer }) => {
-     const [time, setTime] = useState(TimeofOffer * 24 * 60 * 60 * 1000 ||0);
+     const [Time, setTime] = useState(TimeofOffer * 24 * 60 * 60 * 1000 || 0);
 
      useEffect(() => {
-          const worker = new Worker(new URL('../../CountDownWorker.js', import.meta.url))
-          worker.postMessage(time);
+          const worker = new Worker(
+               new URL("../../../CountDownWorker.js", import.meta.url)
+          );
+          worker.postMessage(Time);
           worker.onmessage = (e) => {
                setTime(e.data);
           };
@@ -27,7 +29,7 @@ const Timer = ({ TimeofOffer }) => {
           return { Days, second, minutes, hours };
 
      }
-     const { Days, hours, minutes, second } = formateDate(time)
+     const { Days, hours, minutes, second } = formateDate(Time)
      return (
           <div className='container'>
                <div className='flex items-center  gap-x-[17px]'>

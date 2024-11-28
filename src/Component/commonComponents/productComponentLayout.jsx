@@ -16,7 +16,8 @@ const ProductComponentLayout = ({
   TimeofOffer = 0,
   heading = "Today's",
   description = "Flash sales",
-
+  partialItemShow = 4,
+  copmonentData = {}
   // partialItemShow= 4
 
 }) => {
@@ -24,9 +25,10 @@ const ProductComponentLayout = ({
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 3,
+    speed: 1500,
+    slidesToShow: partialItemShow,
+    slidesToScroll: 10,
+
 
 
   };
@@ -39,45 +41,48 @@ const ProductComponentLayout = ({
 
   return (
 
-    <div className='container mt-[140px] mb-[60px]'>
-      <div className='  gap-x-[87px] flex items-end'>
-        <div >
-          <Heading title={heading} description={description} />
+    <div className='container '>
+      <div className="flex justify-between items-center">
+        <div className='  gap-x-[87px] flex items-end'>
+          <div >
+            <Heading title={heading} description={description} />
+          </div>
+          <div>{TimeStamp && <Timer TimeofOffer={TimeofOffer} />}</div>
         </div>
-        <div>{TimeStamp && <Timer TimeofOffer={TimeofOffer} />}</div>
-      </div>
-      {isArrowsTrue && (
-        <div className="flex items-center gap-x-4">
-          <h1
-            onClick={next}
-            className="cursor-pointer w-[46px] h-[46px] bg-white_F5F5F5 rounded-full flex items-center justify-center hover:bg-black_363738 hover:text-white_FFFFFF transition"
-          >
-            <span className="text-xl">
-              <IoMdArrowBack />
-            </span>
-          </h1>
-          <h1
-            onClick={prev}
-            className="cursor-pointer w-[46px] h-[46px] bg-white_F5F5F5 rounded-full flex items-center justify-center hover:bg-black_363738 hover:text-white_FFFFFF transition"
-          >
-            <span className="text-xl">
-              <IoArrowForward />
+        {isArrowsTrue && (
+          <div className="flex items-center gap-x-4">
+            <h1
+              onClick={next}
+              className="cursor-pointer w-[46px] h-[46px] bg-white_5F5 rounded-full flex items-center justify-center hover:bg-black738 hover:text-white_FFFFFF transition"
+            >
+              <span className="text-xl">
+                <IoMdArrowBack />
+              </span>
+            </h1>
+            <h1
+              onClick={prev}
+              className="cursor-pointer w-[46px] h-[46px] bg-white_5F5 rounded-full flex items-center justify-center hover:bg-black738 hover:text-white_FFFFFF transition"
+            >
+              <span className="text-xl">
+                <IoArrowForward />
 
-            </span>
-          </h1>
-        </div>
-      )}
+              </span>
+            </h1>
+          </div>
+        )}
+
+      </div>
       {/* {viewButton && (
         <div className="bg-redDB4444  text-md font-popins font-medium text-white_FFFFFF px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
           View All
         </div>
       )} */}
       <div >
-      <div className="slider-container">
+        <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>
-            {[... new Array(6)].map((_, index) => (
-              <div >
-                <ProductCard />
+            {[... new Array(partialItemShow || 4)].map((_, index) => (
+              <div className={partialItemShow > 4 ? "pr-8" : "pr-6"}>
+                <ProductCard copmonentData={copmonentData ? copmonentData : {}} />
               </div>
             ))}
           </Slider>
