@@ -1,7 +1,4 @@
-import { BsSmartwatch } from "react-icons/bs";
-import { CiCamera, CiMobile4 } from "react-icons/ci";
-import { HiOutlineComputerDesktop } from "react-icons/hi2";
-import { PiHeadphonesThin } from "react-icons/pi";
+
 export const category = [
      {
           id: 1,
@@ -16,7 +13,7 @@ export const category = [
      {
           id: 3,
           cetegory: "Electronics",
-          subcetegory: false,
+          subcetegory:false,
      },
      {
           id: 4,
@@ -48,40 +45,6 @@ export const category = [
           cetegory: "Health & Beauty",
           subcetegory: false,
      }
-
+     
 ];
 
-export const categoryBrowser = [
-     {
-          id: 1,
-          name: "Mobile",
-          img: "<CiMobile4 />"
-     },
-     {
-          id: 2,
-          name: "Computers",
-          img: "<HiOutlineComputerDesktop />"
-
-     },
-     {
-          id: 3,
-          name: "SmartWatch",
-          img: '<BsSmartwatch />'
-
-     },
-     {
-          id: 4,
-          name: "Camera ",
-          img: "<CiCamera  />"
-     },
-     {
-          id: 5,
-          name: "HeadPhones",
-          img: " <PiHeadphonesThin  />"
-     },
-     {
-          id: 6,
-          name: "Gaming",
-          img: "<LuGamepad  />"
-     }
-]

@@ -14,6 +14,7 @@ const FlashSale = () => {
           heading="Today's"
           description="  Flash sales"
           partialItemShow={5}
+          copmonentData={[...new Array(10)]}
         />
         <div className="pb-20 pt-[60px]">
           <button className="px-[48px] py-4 bg-red_DB4444 rounded text-md font-popins font-medium text-white_FFFFFF hover:opacity-75 cursor-pointer ">

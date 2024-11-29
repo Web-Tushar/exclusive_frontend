@@ -17,7 +17,7 @@ const ProductComponentLayout = ({
   heading = "Today's",
   description = "Flash sales",
   partialItemShow = 4,
-  copmonentData = {}
+  copmonentData = []
   // partialItemShow= 4
 
 }) => {
@@ -80,9 +80,9 @@ const ProductComponentLayout = ({
       <div >
         <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>
-            {[... new Array(partialItemShow || 4)].map((_, index) => (
+            {copmonentData?.map((item, index) => (
               <div className={partialItemShow > 4 ? "pr-8" : "pr-6"}>
-                <ProductCard copmonentData={copmonentData ? copmonentData : {}} />
+                <ProductCard itemData={item ? item: {}} />
               </div>
             ))}
           </Slider>
