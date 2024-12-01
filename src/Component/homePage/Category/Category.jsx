@@ -52,6 +52,7 @@ const Category = () => {
                     ProductCard={CategoryItems}
                     partialItemShow={6}
                     copmonentData={categoryBrowser}
+                    slidesToScroll= {6}
 
                />
 

@@ -79,7 +79,7 @@ function Banner() {
                          <ul className='pt-[40px]'>
                               {category?.map((item) => (
                                    <div className='flex  justify-between items-center duration-500 hover:bg-gray-400 hover:pl-4'>
-                                        <li className=' font-poppins text-base py-2 font-normal'>{item.cetegory}</li>
+                                        <li  className=' font-poppins text-base py-2 font-normal'>{item.cetegory}</li>
                                         {
                                              item.subcetegory && (
                                                   <span className='pr-5 text-xl'><FaAngleRight /></span>

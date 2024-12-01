@@ -5,11 +5,11 @@ import Timer from '../../Component/commonComponents/Timer';
 import Slider from "react-slick";
 import { IoMdArrowBack } from "react-icons/io";
 import { IoArrowForward } from "react-icons/io5";
-// import Skeletone from '../../helpers/Skeletone';
+import Skeletone from '../../helpers/Skeletone';
 
 const ProductComponentLayout = ({
   ProductCard = () => {
-
+    <Skeletone />
   },
   TimeStamp = false,
   isArrowsTrue = false,
@@ -17,7 +17,10 @@ const ProductComponentLayout = ({
   heading = "Today's",
   description = "Flash sales",
   partialItemShow = 4,
-  copmonentData = []
+  copmonentData = [],
+  isLoading = false,
+  
+
   // partialItemShow= 4
 
 }) => {
@@ -25,18 +28,16 @@ const ProductComponentLayout = ({
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
+    speed: 1000,
     slidesToShow: partialItemShow,
-    slidesToScroll: 10,
-
-
+    slidesToScroll:4,
 
   };
   const next = () => {
-    sliderRef.current.slickNext()
+    sliderRef.current.slickPrev()
   }
   const prev = () => {
-    sliderRef.current.slickPrev()
+    sliderRef.current.slickNext()
   }
 
   return (
@@ -80,11 +81,21 @@ const ProductComponentLayout = ({
       <div >
         <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>
-            {copmonentData?.map((item, index) => (
-              <div className={partialItemShow > 4 ? "pr-8" : "pr-6"}>
-                <ProductCard itemData={item ? item: {}} />
-              </div>
-            ))}
+            {isLoading
+              ? [...new Array(8)]?.map((item, index) => (
+                <div className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={index}>
+                  <Skeletone />
+                </div>
+              ))
+
+              : copmonentData?.map((item, index) => (
+                <div className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={item.key}>
+                  <ProductCard itemData={item ? item : {}} />
+                </div>
+              ))
+
+
+            }
           </Slider>
         </div>
       </div>
