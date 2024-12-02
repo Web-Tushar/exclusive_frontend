@@ -4,16 +4,21 @@ import image from '../../assets/images/remoot.png';
 import { FiEye } from "react-icons/fi";
 import { GoStarFill } from "react-icons/go";
 import UseCalculateIDiscount from '../../Hooks/UseCalculateIDiscount';
+import Star from './Star';
 
 const ProductCard = ({ itemData }) => {
-     console.log(itemData, "item");
+     // console.log(itemData, "item");
 
      return (
           <div>
                <div className='w-[270px] '>
                     <div className="w-[270px] rounded-[2px] h-[250px] bg-white_5F5 mt-[31px] pt-3 pb-[49px] group  cursor-pointer">
                          <div className='flex justify-between px-3   '>
-                              <span className='bg-red_DB4444 py-[4px] text-text_white font-poppins text-[12px] px-[12px] font-normal rounded-[4px] block'>-{itemData ? itemData.discountPercentage : 0}%</span>
+                         {itemData?.discountPercentage &&(
+                                   <span className='bg-red_DB4444 py-[4px] text-text_white font-poppins text-[12px] px-[12px] font-normal rounded-[4px] block'>-{itemData ? itemData.discountPercentage : 0}%
+
+                                   </span>
+                         )}
 
                               <span className=' text-[20px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'><FaRegHeart /></span>
                          </div>
@@ -41,18 +46,16 @@ const ProductCard = ({ itemData }) => {
                                         ).toFixed(2)}
                               </span>
                               <span className='text-text_000000 opacity-[0.5] font-poppins text-[16px] font-medium cursor-pointer	 line-through'>
-                                   ${itemData ? itemData.price : 0}
+                                   ${itemData ? itemData.price.toFixed(2) : 0}
                               </span>
                          </div>
                          <div className='flex items-center gap-x-2 mt-2 cursor-pointer'>
+
                               <div className='flex gap-x-1'>
-                                   {[...new Array(5)].map((_, index) => (
-                                        <GoStarFill key={index} className='text-star' />
-                                   ))}
+                                   <Star rating={itemData && itemData.rating} />
+                                   <h2>{`(${itemData?.reviews?.length})`}</h2>
                               </div>
-                              <div>
-                                   <span>(88)</span>
-                              </div>
+
 
                          </div>
                     </div>

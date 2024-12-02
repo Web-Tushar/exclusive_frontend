@@ -44,7 +44,7 @@ const categoryBrowser = [
 
 const Category = () => {
      return (
-          <div className='container pb-[70px] border-b-[2px] border-b-black738 mt-[140px] mb-[70px]'>
+          <div className='container pb-[70px] border-b-[2px] border-b-gray-300 mt-[140px] mb-[70px]'>
                <ProductComponentLayout
                     heading={"Categories"}
                     description={"Browse By Category"}

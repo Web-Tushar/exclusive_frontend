@@ -19,6 +19,7 @@ const ProductComponentLayout = ({
   partialItemShow = 4,
   copmonentData = [],
   isLoading = false,
+  viewButton = false
   
 
   // partialItemShow= 4
@@ -71,13 +72,17 @@ const ProductComponentLayout = ({
             </h1>
           </div>
         )}
-
+        { viewButton && (
+          <div className="bg-red_DB4444 font-poppins text-[16px] font-medium text-white px-12 py-4 rounded cursor-pointer hover:opacity-75">View All</div>
+        )}
       </div>
-      {/* {viewButton && (
+
+       {/* {viewButton && (
         <div className="bg-redDB4444  text-md font-popins font-medium text-white_FFFFFF px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
           View All
         </div>
-      )} */}
+      )}  */}
+
       <div >
         <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>

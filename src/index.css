@@ -94,6 +94,21 @@
   }
 }
 
+.imgShadow{
+  position: relative;
+}
+.imgShadow::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #D9D9D9;
+  opacity: 0.3;
+  filter: blur(100px);
+  width: 504px;
+  height: 504px;
+  border-radius: 50%;
+}
 /* .slick-active{ */
 /* background-color: rgb(236, 11, 11); */
 /* width: "20px";

@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import BestSelling from './../../../Component/homePage/Bestselling/BestSelling';
 
 // Define a service using a base URL and expected endpoints
 
@@ -7,10 +8,14 @@ export const productApi = createApi({
      baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com/' }),
      endpoints: (builder) => ({
       GetAllProduct: builder.query({
-          query: () => "products",
+          query: () => "/products",
+      }),
+      BestSellingProduct: builder.query({
+          query: () => "/products/category/smartphones",
       })
+
      }),
    })
 
-   export const { useGetAllProductQuery } = productApi
+   export const { useGetAllProductQuery , useBestSellingProductQuery} = productApi
 
