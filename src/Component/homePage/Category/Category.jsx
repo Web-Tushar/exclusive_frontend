@@ -7,7 +7,7 @@ import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { PiHeadphonesThin } from "react-icons/pi";
 import { LuGamepad } from 'react-icons/lu';
 
-const categoryBrowser = [ 
+const categoryBrowser = [
      {
           id: 1,
           name: "Mobile",
@@ -28,17 +28,17 @@ const categoryBrowser = [
      {
           id: 4,
           name: "Camera ",
-          img: <CiCamera  />
+          img: <CiCamera />
      },
      {
           id: 5,
           name: "HeadPhones",
-          img: <PiHeadphonesThin  />
+          img: <PiHeadphonesThin />
      },
      {
           id: 6,
           name: "Gaming",
-          img: <LuGamepad  />
+          img: <LuGamepad />
      }
 ]
 
@@ -52,7 +52,7 @@ const Category = () => {
                     ProductCard={CategoryItems}
                     partialItemShow={6}
                     copmonentData={categoryBrowser}
-                    slidesToScroll= {6}
+                    slidesToScroll={6}
 
                />
 

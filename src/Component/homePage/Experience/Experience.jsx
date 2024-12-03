@@ -39,12 +39,12 @@ const Experience = () => {
                          </div>
 
                     </div>
-                    
+
                     <div className=' w-1/2  flex items-center justify-center imgShadow pr-11'>
-                              <img
-                                   className='w-full h-full object-contain z-10  '
-                                   src={Experienceimg}
-                                   alt="Experienceimg" />
+                         <img
+                              className='w-full h-full object-contain z-10  '
+                              src={Experienceimg}
+                              alt="Experienceimg" />
                          {/* <div className="w-[504px] h-[500px]  rounded-[504px] bg-[#D9D9D9] opacity-[0.3] blur-[100px]">
                          </div> */}
                     </div>
