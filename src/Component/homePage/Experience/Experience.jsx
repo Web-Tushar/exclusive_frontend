@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Experienceimg from "../../../assets/images/jbl_box.png"
 
-const Experience = () => {
+const Experience = ({timeDuration = 1 }) => {
+     const [Time, setTime] = useState(timeDuration * 24 * 60 * 60 * 1000 || 0);
+
+     useEffect(() => {
+          const worker = new Worker(
+               new URL("../../../../CountDownWorker.js", import.meta.url)
+          );
+          worker.postMessage(Time);
+          worker.onmessage = (e) => {
+               setTime(e.data);
+          };
+     }, []);
+
+     // useEffect(()=>{
+     //      setTimeout(() => {
+     //           setTime(time - 1000)
+     //      }, 1000);
+     // }, [time])
+     const formateDate = (milisecond) => {
+          let total_second = parseInt(Math.floor(milisecond / 1000));
+          let total_minutes = parseInt(Math.floor(total_second / 60));
+          let total_hours = parseInt(Math.floor(total_minutes / 60));
+          let Days = parseInt(Math.floor(total_hours / 24));
+          let second = parseInt(Math.floor(total_second % 60));
+          let minutes = parseInt(Math.floor(total_minutes % 60));
+          let hours = parseInt(Math.floor(total_hours % 60));
+          return { Days, second, minutes, hours };
+
+     }
+     const { Days, hours, minutes, second } = formateDate(Time)
      return (
           <div className='container  mt-[140px] '>
                <div className="bg-black flex  ">
@@ -11,26 +40,26 @@ const Experience = () => {
                          <div className=" flex gap-6 mt-8">
                               <div className="w-[62px] h-[62px] flex justify-center items-center bg-white rounded-[50%]">
                                    <div className="flex flex-col items-center gap-x-[-10px]">
-                                        <span className='text-text_000000 font-poppins font-semibold'>23</span>
+                                        <span className='text-text_000000 font-poppins font-semibold'>{Days?Days:0}</span>
+                                        <span className='text-text_000000 font-poppins font-normal	' >Days</span>
+                                   </div>
+                              </div>
+                              <div className="w-[62px] h-[62px] flex justify-center items-center bg-white rounded-[50%]">
+                                   <div className="flex flex-col items-center gap-x-[-10px]">
+                                        <span className='text-text_000000 font-poppins font-semibold	'>{hours?hours:0}</span>
                                         <span className='text-text_000000 font-poppins font-normal	' >hours</span>
                                    </div>
                               </div>
                               <div className="w-[62px] h-[62px] flex justify-center items-center bg-white rounded-[50%]">
                                    <div className="flex flex-col items-center gap-x-[-10px]">
-                                        <span className='text-text_000000 font-poppins font-semibold	'>23</span>
-                                        <span className='text-text_000000 font-poppins font-normal	' >hours</span>
+                                        <span className='text-text_000000 font-poppins font-semibold	'>{minutes?minutes:0}</span>
+                                        <span className='text-text_000000 font-poppins font-normal	' >minutes</span>
                                    </div>
                               </div>
                               <div className="w-[62px] h-[62px] flex justify-center items-center bg-white rounded-[50%]">
                                    <div className="flex flex-col items-center gap-x-[-10px]">
-                                        <span className='text-text_000000 font-poppins font-semibold	'>23</span>
-                                        <span className='text-text_000000 font-poppins font-normal	' >hours</span>
-                                   </div>
-                              </div>
-                              <div className="w-[62px] h-[62px] flex justify-center items-center bg-white rounded-[50%]">
-                                   <div className="flex flex-col items-center gap-x-[-10px]">
-                                        <span className='text-text_000000 font-poppins font-semibold	'>23</span>
-                                        <span className='text-text_000000 font-poppins font-normal	' >hours</span>
+                                        <span className='text-text_000000 font-poppins font-semibold	'>{second?second:0}</span>
+                                        <span className='text-text_000000 font-poppins font-normal	' >second</span>
                                    </div>
                               </div>
                          </div>

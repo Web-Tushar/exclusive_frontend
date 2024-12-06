@@ -19,7 +19,8 @@ const ProductComponentLayout = ({
   partialItemShow = 4,
   copmonentData = [],
   isLoading = false,
-  viewButton = false
+  viewButton = false,
+  rows = 1,
 
 
   // partialItemShow= 4
@@ -32,6 +33,7 @@ const ProductComponentLayout = ({
     speed: 1000,
     slidesToShow: partialItemShow,
     slidesToScroll: 4,
+    rows: rows
 
   };
   const next = () => {
