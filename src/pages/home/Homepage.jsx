@@ -9,6 +9,7 @@ import BestSelling from '../../Component/homePage/Bestselling/BestSelling'
 import Experience from '../../Component/homePage/Experience/Experience'
 import ExploreProducts from '../../Component/homePage/exploerProduct/ExploreProducts'
 import NewArrival from '../../Component/homePage/NewArrival/NewArrival'
+import CustomerService from '../../Component/homePage/customerService/CustomerService'
 
 const Homepage = () => {
      return <div>
@@ -21,6 +22,7 @@ const Homepage = () => {
           <Experience timeDuration={5}/>
           <ExploreProducts/>
           <NewArrival/>
+          <CustomerService/>
      
      </div>
 
