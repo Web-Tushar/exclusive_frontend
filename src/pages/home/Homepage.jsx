@@ -10,20 +10,22 @@ import Experience from '../../Component/homePage/Experience/Experience'
 import ExploreProducts from '../../Component/homePage/exploerProduct/ExploreProducts'
 import NewArrival from '../../Component/homePage/NewArrival/NewArrival'
 import CustomerService from '../../Component/homePage/customerService/CustomerService'
+import Footer from '../../Component/homePage/footer/Footer'
 
 const Homepage = () => {
      return <div>
           <Header />
           <Navbar />
           <Banner />
-          <FlashSale/>
-          <Category/>
-          <BestSelling/>
-          <Experience timeDuration={5}/>
-          <ExploreProducts/>
-          <NewArrival/>
-          <CustomerService/>
-     
+          <FlashSale />
+          <Category />
+          <BestSelling />
+          <Experience timeDuration={5} />
+          <ExploreProducts />
+          <NewArrival />
+          <CustomerService />
+          <Footer />
+
      </div>
 
 }
