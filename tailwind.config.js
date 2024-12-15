@@ -21,6 +21,7 @@ export default {
         hoverbtn_E07575: 'var(--hoverbtn_E07575)',
         hoverbtn_A0BCE0: 'var(--hoverbtn_A0BCE0)',
         red_DB4444: 'var(--red_DB4444)',
+        shop_color: 'var(--shop_color)',
 
       },
     },
