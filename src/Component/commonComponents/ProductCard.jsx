@@ -11,24 +11,28 @@ const ProductCard = ({ itemData }) => {
 
      return (
           <div>
-               <div className='w-[270px] '>
-                    <div className="w-[270px] rounded-[2px] h-[250px] bg-white_5F5 mt-[31px] pt-3 pb-[49px] group  cursor-pointer">
-                         <div className='flex justify-between px-3   '>
-                         {itemData?.discountPercentage &&(
+               <div className='w-full '>
+                    <div className="w-full px-3 rounded-[2px] h-[250px] bg-white_5F5 mt-[31px] pt-3 pb-[49px] group  cursor-pointer">
+                         <div className='flex justify-between    '>
+                              {itemData?.discountPercentage && (
                                    <span className='bg-red_DB4444 py-[4px] text-text_white font-poppins text-[12px] px-[12px] font-normal rounded-[4px] block'>-{itemData ? itemData.discountPercentage : 0}%
 
                                    </span>
-                         )}
+                              )}
 
                               <span className=' text-[20px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'><FaRegHeart /></span>
                          </div>
-                         <div className='mt-[11px] mx-[49px]  flex h-[152px] w-[172px] object-cover relative '>
-                              <img
-                                   src={itemData ? itemData.thumbnail : image}
-                                   alt={image}
-                                   className='h-full w-full object-contain cursor-pointer'
-                              />
-                              <span className=' absolute text-[20px] top-[0px] right-[-36px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'><FiEye /></span>
+                         <div className='mt-[11px]  flex justify-between'>
+                              <div className="w-[172px]   h-[152px] flex-1">
+                                   <img
+                                        src={itemData ? itemData.thumbnail : image}
+                                        alt={image}
+                                        className='h-full w-full object-contain cursor-pointer'
+                                   /> 
+                              </div>
+                              <span className='  text-[20px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'>
+                                   <FiEye />
+                              </span>
 
                          </div>
                          <div className="overlay opacity-0 cursor-pointer h-[41px] font-poppins font-medium text-[16px] w-full bg-button_000000 items-center capitalize  text-white flex justify-center duration-500   group-hover:opacity-100">
