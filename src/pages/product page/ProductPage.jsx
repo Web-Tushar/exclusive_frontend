@@ -9,9 +9,9 @@ const ProductPage = () => {
   return (
     <div className='container py-20'>
       <BreadCrumb />
-      <div className="flex">
-        <ProductLeft CategoryData = {data} isLoading={isLoading} error={error} />
-        <ProductRight  />
+      <div className="flex justify-between">
+        <ProductLeft CategoryData={data} isLoading={isLoading} error={error} />
+        <ProductRight />
       </div>
     </div>
   )
