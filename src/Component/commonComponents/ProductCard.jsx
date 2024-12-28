@@ -28,7 +28,7 @@ const ProductCard = ({ itemData }) => {
                                         src={itemData ? itemData.thumbnail : image}
                                         alt={image}
                                         className='h-full w-full object-contain cursor-pointer'
-                                   /> 
+                                   />
                               </div>
                               <span className='  text-[20px] w-[34px] h-[34px] bg-white_FFFFFF flex justify-center items-center rounded-full cursor-pointer hover:bg-red-400 hover:text-white'>
                                    <FiEye />
