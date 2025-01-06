@@ -5,12 +5,16 @@ import { useGetAllProductQuery } from '../../../feature/Allslice/Api/productApi'
 
 const ProductRight = () => {
      const { data, error, isaLoading } = useGetAllProductQuery();
-     const [page, setpage] = useState(1);
+     const [page, setpage] = useState(3);
      const [pagePershow, setpagePershow] = useState(9);
      let totalPage = data?.limit / 9
+
+     //   pagination funtionality
      const handlePerItem = (index) => {
-          setpage(index)
-     }
+          if (index > 0 && index <= Math.ceil(totalPage)) {
+               setpage(index);
+          }
+     };
      console.log(data)
      return (
           <div className='w-[70%]  items-end pr-3'>
@@ -42,7 +46,11 @@ const ProductRight = () => {
                     className=" flex justify-center items-center mt-[42px]">
                     <ul class="inline-flex -space-x-px text-sm">
                          <li>
-                              <span href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-default">Previous</span>
+                              <span
+                                   href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-default"
+                                   onClick={() => handlePerItem(page - 1)}
+
+                              >Previous</span>
                          </li>
                          {[...new Array(Math.ceil(totalPage || 8))].map((_, index) => (
                               <li>
@@ -57,7 +65,9 @@ const ProductRight = () => {
                               </li>
                          ))}
                          <li>
-                              <spaspan href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-default">Next</spaspan>
+                              <spaspan href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-default"
+                              onClick={() => handlePerItem(page + 1)}
+                              >Next</spaspan>
                          </li>
                     </ul>
                </div>

@@ -9,7 +9,7 @@ import Skeletone from '../../helpers/Skeletone';
 
 const ProductComponentLayout = ({
   ProductCard = () => {
-    <Skeletone />
+    <Skeletone />  
   },
   TimeStamp = false,
   isArrowsTrue = false,
