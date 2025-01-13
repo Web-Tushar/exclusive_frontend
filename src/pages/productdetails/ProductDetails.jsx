@@ -2,6 +2,7 @@ import React from 'react'
 import { BreadCrumb } from '../../Component/commonComponents/BreadCrumbs'
 import ImageGalary from '../../Component/commonComponents/productdetails/ImageGalary'
 import { useGetSingleProductQuery } from '../../feature/Allslice/Api/productApi'  
+import ProductDetaisInfo from '../../Component/commonComponents/productdetails/ProductDetaisInfo'
 
 
 const ProductDetails = () => {
@@ -15,7 +16,7 @@ const ProductDetails = () => {
                          <div className=" ">
                               <ImageGalary image ={data?.images}/>
                          </div>
-                         <div className="w-full bg-red-200">2</div>
+                         <div className="w-full"><ProductDetaisInfo/></div>
                     </div>
 
                </div>
