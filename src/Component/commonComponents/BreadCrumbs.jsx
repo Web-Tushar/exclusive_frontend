@@ -16,21 +16,22 @@ export const BreadCrumb = () => {
                               <Link to={"/"}>Home</Link>
                          </span>
                          {pathnameArr?.map((name, index) => {
+                              
                               BreadCrumbPath += `/${name}`;
                               const isLast = index === pathnameArr?.length - 1;
                               return isLast ? (
-                                   <div>
+                                   <div key={index}>
                                         <span
                                              className="bg-purple-400 text-white_FFFFFF font-popins px-2 py-1 mx-2 rounded-sm"
-                                             key={index}
+                                             
                                         >
                                              {name}
                                         </span>
                                    </div>
                               ) : (
-                                   <div className="flex items-center">
+                                   <div key={index} className="flex items-center">
                                         <span className="text-xl">/</span>
-                                        <span key={index}>
+                                        <span >
                                              <Link
                                                   className="bg-blue-500 px-2 py-1 mx-2 rounded-sm text-white_FFFFFF font-popins"
                                                   to={BreadCrumbPath}

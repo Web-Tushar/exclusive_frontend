@@ -1,5 +1,5 @@
 import React from 'react'
-const Heading = ({ title, description }) => {
+const Heading = ({ title, description = true }) => {
   return (
     <div>
       <div className='container'>
