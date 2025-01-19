@@ -76,7 +76,7 @@ const ProductDetails = () => {
                          <div className="slider-container">
                               <Slider {...settings}>
                               {catagoryData?.data?.products.map((item)=>(
-                                   <div className="px-[40px]">
+                                   <div key={item} className="px-[40px]">
                                         <ProductCard key={item} itemData={item} />
 
                                    </div>

@@ -90,7 +90,7 @@ const ProductComponentLayout = ({
           <Slider ref={sliderRef} {...settings}>
             {isLoading
               ? [...new Array(8)]?.map((item, index) => (
-                <div key={item} className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={index}>
+                <div key={item.key} className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={index}>
                   <Skeletone />
                 </div>
               ))

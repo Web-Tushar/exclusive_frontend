@@ -3,7 +3,7 @@ import Star from '../Star'
 import { TbTruckDelivery } from "react-icons/tb";
 import UseCalculateIDiscount from '../../../Hooks/UseCalculateIDiscount';
 
-const ProductDetaisInfo = ({ productDetailsData  }) => {
+const ProductDetaisInfo = ({productDetailsData}) => {
 
   const {
     title,
@@ -18,12 +18,11 @@ const ProductDetaisInfo = ({ productDetailsData  }) => {
   } = productDetailsData || {};
 
   const sizes = [
-
     { id: 1, size: "XS" },
-    { id: 1, size: "S" },
-    { id: 1, size: "M" },
-    { id: 1, size: "L" },
-    { id: 1, size: "XL" },
+    { id: 2, size: "S" },
+    { id: 3, size: "M" },
+    { id: 4, size: "L" },
+    { id: 5, size: "XL" },
 
   ]
   return (
@@ -61,13 +60,11 @@ const ProductDetaisInfo = ({ productDetailsData  }) => {
           <h2 className='text-[20px] font-Inter font-normal '>Size:</h2>
           <div className="flex gap-x-2">
             {
-              sizes.map((s) => (
-                <span key={s} className='w-[32px] h-[32px] rounded-[4px] flex justify-center items-center  font-poppins text-[14px] font-medium  border-2 border-black opacity-50 '>{s.size}</span>
+              sizes.map((item) => (
+                <span key={item.id} className='w-[32px] h-[32px] rounded-[4px] flex justify-center items-center  font-poppins text-[14px] font-medium  border-2 border-black opacity-50 '>{item.size}</span>
 
               ))
             }
-
-
           </div>
         </div>
         {/* button */}
