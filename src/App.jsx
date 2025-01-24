@@ -9,6 +9,7 @@ import Homepage from './pages/home/Homepage';
 import RootlayoutMain from './Component/Rootlayout/RootlayoutMain';
 import ProductPage from './pages/product page/ProductPage';
 import ProductDetails from './pages/productdetails/ProductDetails';
+import Login from './pages/auth/Login/Login';
 
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
         <Route path='/ProductPage' element={<ProductPage />}></Route>
         <Route path='/ProductDetails/:id' element={<ProductDetails />}></Route>
         <Route path='/ProductDetails' element={<ProductPage />}></Route>
+        <Route path='/Login' element={<Login />}></Route>
       </Route>
     </Route>
   )
