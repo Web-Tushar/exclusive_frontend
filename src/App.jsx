@@ -10,6 +10,7 @@ import RootlayoutMain from './Component/Rootlayout/RootlayoutMain';
 import ProductPage from './pages/product page/ProductPage';
 import ProductDetails from './pages/productdetails/ProductDetails';
 import Login from './pages/auth/Login/Login';
+import Wishlist from './pages/wishlist/Wishlist';
 
 
 const router = createBrowserRouter(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         <Route path='/ProductDetails/:id' element={<ProductDetails />}></Route>
         <Route path='/ProductDetails' element={<ProductPage />}></Route>
         <Route path='/Login' element={<Login />}></Route>
+        <Route path='/Wishlist' element={<Wishlist />}></Route>
       </Route>
     </Route>
   )

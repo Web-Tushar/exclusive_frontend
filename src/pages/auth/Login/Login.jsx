@@ -7,7 +7,7 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 
 const Login = () => {
-     const [ eye, seteye] = useState(false)
+     const [eye, seteye] = useState(false)
      const initialValues = {
           emailorphone: "",
           password: "",
@@ -58,7 +58,7 @@ const Login = () => {
 
                                         <div className="flex items-center relative">
                                              <input
-                                                  type={eye? "text": "password"}
+                                                  type={eye ? "text" : "password"}
                                                   name='password'
                                                   placeholder='password'
                                                   id='password'
@@ -67,11 +67,11 @@ const Login = () => {
                                                   value={formik.values.password}
 
                                              />
-                                             <span className='text-[25px] absolute top-3 right-[41%]' onClick={()=>seteye(!eye)}>
+                                             <span className='text-[25px] absolute top-3 right-[41%]' onClick={() => seteye(!eye)}>
                                                   {
-                                                       eye? <FaRegEyeSlash className='cursor-pointer' /> : <FaRegEye  className='cursor-pointer'/>
+                                                       eye ? <FaRegEyeSlash className='cursor-pointer' /> : <FaRegEye className='cursor-pointer' />
                                                   }
-                                                  </span>
+                                             </span>
                                         </div>
 
                                         {formik.touched.password && formik.errors.password ? (
