@@ -9,7 +9,7 @@ import Skeletone from '../../helpers/Skeletone';
 
 const ProductComponentLayout = ({
   ProductCard = () => {
-    <Skeletone />  
+    <Skeletone />
   },
   TimeStamp = false,
   isArrowsTrue = false,
@@ -79,18 +79,13 @@ const ProductComponentLayout = ({
         )}
       </div>
 
-      {/* {viewButton && (
-        <div className="bg-redDB4444  text-md font-popins font-medium text-white_FFFFFF px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
-          View All
-        </div>
-      )}  */}
 
       <div >
-        <div className="slider-container">
+        {/* <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>
             {isLoading
-              ? [...new Array(8)]?.map((item, index) => (
-                <div key={item.key} className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={index}>
+              ? [...new Array(8)]?.map((index) => (
+                <div  className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={index.key}>
                   <Skeletone />
                 </div>
               ))
@@ -103,8 +98,27 @@ const ProductComponentLayout = ({
 
 
             }
+          </Slider> */}
+        {/* </div> */}
+        <div className="slider-container">
+          <Slider ref={sliderRef} {...settings}>
+            {isLoading
+              ? [...new Array(8)]?.map((_, index) => ( // Use `index` as the unique key for the skeletons
+                <div className={partialItemShow > 4 ? "pr-8" : "pr-6"} key={`skeleton-${index}`}>
+                  <Skeletone />
+                </div>
+              ))
+              : copmonentData?.map((item, index) => (
+                <div
+                  className={partialItemShow > 4 ? "pr-8" : "pr-6"}
+                  key={item?.id || `item-${index}`} // Use a unique identifier like `item.id` if available, fallback to index
+                >
+                  <ProductCard itemData={item || {}} />
+                </div>
+              ))}
           </Slider>
         </div>
+
       </div>
 
     </div>

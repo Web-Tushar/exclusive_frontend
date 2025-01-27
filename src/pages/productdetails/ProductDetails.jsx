@@ -6,21 +6,28 @@ import { useParams } from 'react-router-dom'
 import ProductDetailsSkeleton from '../../Component/Skeleton/ProductDetailsSkeleton'
 import Heading from '../../Component/commonComponents/Heading'
 import Slider from "react-slick";
-import { useGetSingleProductQuery,useGetProductBycategoryQuery } from '../../feature/Allslice/Api/productApi'
+import { useGetSingleProductQuery, useGetProductBycategoryQuery } from '../../feature/Allslice/Api/productApi.js'
 import ProductCard from '../../Component/commonComponents/ProductCard'
-import ProductComponentLayout from '../../Component/commonComponents/productComponentLayout'
+// import ProductComponentLayout from '../../Component/commonComponents/productComponentLayout'
 
 const ProductDetails = () => {
-     const params = useParams()
+     const params = useParams();
      const { data, error, isLoading } = useGetSingleProductQuery(parseInt(params?.id));
-     const catagoryData =  useGetProductBycategoryQuery("furniture")
-     console.log()
+    
+     /**
+   * todo : useGetProductByCategoryQuery query invoked
+   */
+
+     console.log(data)
+
+     const catagoryData = useGetProductBycategoryQuery(data?.category)
+     console.log(data?.category)
      var settings = {
           dots: true,
           infinite: false,
           isArrowsTrue: true,
           speed: 500,
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 3,
           initialSlide: 0,
           responsive: [
@@ -75,12 +82,12 @@ const ProductDetails = () => {
                          />
                          <div className="slider-container">
                               <Slider {...settings}>
-                              {catagoryData?.data?.products.map((item)=>(
-                                   <div key={item} className="px-[40px]">
-                                        <ProductCard key={item} itemData={item} />
+                                   {catagoryData?.data?.products.map((item) => (
+                                        <div key={item} className="px-[40px]">
+                                             <ProductCard key={item} itemData={item} />
 
-                                   </div>
-                              ))}
+                                        </div>
+                                   ))}
                               </Slider>
                          </div>
                     </div>
