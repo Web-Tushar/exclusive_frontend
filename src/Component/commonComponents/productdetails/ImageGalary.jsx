@@ -25,7 +25,7 @@ const ImageGalary = ({ image }) => {
                     </div>
                     {/* big img */}
                     <div className=" w-full bg-white_5F5 flex justify-center items-center px-2">
-                         <InnerImageZoom src={initialimg} />
+                         <InnerImageZoom src={image[0] || initialimg} />
                     </div>
 
                </div>

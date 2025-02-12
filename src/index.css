@@ -13,7 +13,11 @@
     box-sizing: border-box;
 
   }
-
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #e0cbcb;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
   a {
     text-decoration: none;
     display: inline-block;

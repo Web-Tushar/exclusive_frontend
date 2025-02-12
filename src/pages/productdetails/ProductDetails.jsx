@@ -18,10 +18,10 @@ const ProductDetails = () => {
    * todo : useGetProductByCategoryQuery query invoked
    */
 
-     console.log(data)
+     
 
      const catagoryData = useGetProductBycategoryQuery(data?.category)
-     console.log(data?.category)
+     
      var settings = {
           dots: true,
           infinite: false,
