@@ -13,11 +13,13 @@
     box-sizing: border-box;
 
   }
+
   .scrollbar::-webkit-scrollbar-thumb {
     background: #e0cbcb;
     border-radius: 100vh;
     border: 3px solid #f6f7ed;
   }
+
   a {
     text-decoration: none;
     display: inline-block;
@@ -97,12 +99,19 @@
     color: var(--text_white);
     border: 1px solid var(--black738);
   }
+
+  .accountstyle {
+    font-family: var(--poppins);
+    font-weight: 400;
+    color: var(--text_000000);
+  }
 }
 
-.imgShadow{
+.imgShadow {
   position: relative;
 }
-.imgShadow::after{
+
+.imgShadow::after {
   content: "";
   position: absolute;
   left: 0;
