@@ -145,7 +145,7 @@ const About = () => {
       <div className="  mt-[140px] mb-[140px]  slider-container ">
         <Slider {...settings}>
           {[...new Array(10)].map((_, index) => (
-            <div  key={index}>
+            <div key={index}>
               <ProfileCart />
             </div>
 
@@ -157,7 +157,7 @@ const About = () => {
 
       {/* CustomerService */}
       <div className="">
-        <CustomerService/>
+        <CustomerService />
       </div>
       {/* CustomerService */}
     </div>
