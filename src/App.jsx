@@ -15,6 +15,9 @@ import AddToCart from './pages/Add to cart/AddToCart';
 import MyAccount from './pages/myaccount/MyAccount';
 import About from './pages/aboute/About';
 import Contact from './pages/contact/Contact';
+import Page404 from './pages/404page/Page404';
+import Signup from './pages/sign up/Signup';
+import Forget_pasword from './pages/forget password/Forget_pasword';
 
 
 const router = createBrowserRouter(
@@ -29,8 +32,11 @@ const router = createBrowserRouter(
         <Route path='/Wishlist' element={<Wishlist />}></Route>
         <Route path='/AddToCart' element={<AddToCart />}></Route>
         <Route path='/MyAccount' element={<MyAccount />}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route path='/Contact' element={<Contact/>}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/Contact' element={<Contact />}></Route>
+        <Route path='/Signup' element={<Signup />}></Route>
+        <Route path='/Forget_pasword' element={<Forget_pasword />}></Route>
+        <Route path='*' element={<Page404 />}></Route>
       </Route>
     </Route>
   )

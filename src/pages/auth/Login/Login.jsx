@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import { LoginSchema } from './../../../validation/schema/LoginSchema';
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
      const [eye, seteye] = useState(false)
@@ -78,10 +79,10 @@ const Login = () => {
                                              <span className=' block mt-2 font-poppins text-red-400 font-bold'>{formik.errors.password}</span>
                                         ) : null}
 
-                                        <div className=" flex justify-between  items-center ">
+                                        <div className=" flex gap-x-[40px] items-center ">
                                              <button type="submit" className='py-[16px] px-[48px] bg-red_DB4444 text-white_FFFFFF font-poppins text-[16px] font-semibold rounded-sm'>Log In</button>
 
-                                             <span className='font-poppins text-[16px] font-normal text-red-500 cursor-pointer'>Forget Password?</span>
+                                        <Link to={"/Forget_pasword"} className='font-poppins text-[16px] font-normal text-red-500 cursor-pointer'>ForgetPassword?</Link>
 
                                         </div>
                                    </div>
