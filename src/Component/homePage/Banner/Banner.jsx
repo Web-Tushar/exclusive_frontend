@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { category } from "../../../../../excluisive_ecommerce/Data/data"
+import { category } from "../../../../Data/data";
 import { FaAngleRight } from "react-icons/fa6";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
@@ -27,7 +27,7 @@ function Banner() {
                          padding: "10px"
                     }}
                >
-                    <ul style={{ margin: "0px",display:"flex" ,alignItems:"center" ,justifyContent:"center"}}> {dots} </ul>
+                    <ul style={{ margin: "0px", display: "flex", alignItems: "center", justifyContent: "center" }}> {dots} </ul>
                </div>
           ),
           customPaging: i => (
@@ -79,7 +79,7 @@ function Banner() {
                          <ul className='pt-[40px]'>
                               {category?.map((item) => (
                                    <div key={item} className='flex  justify-between items-center duration-500 hover:bg-gray-400 hover:pl-4'>
-                                        <li  className=' font-poppins text-base py-2 font-normal'>{item.cetegory}</li>
+                                        <li className=' font-poppins text-base py-2 font-normal'>{item.cetegory}</li>
                                         {
                                              item.subcetegory && (
                                                   <span className='pr-5 text-xl'><FaAngleRight /></span>
